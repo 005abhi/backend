@@ -11,8 +11,7 @@ const SALT_ROUNDS = 10;
 //crud operations
 
 //1. retrive all
-//http://15.206.185.169:3001
-/user
+//http://15.206.185.169:3001/user
 
 userRoutes.route("/user").get(async (req, res) => {
   let db = database.getDb();
@@ -25,8 +24,7 @@ userRoutes.route("/user").get(async (req, res) => {
 });
 
 //2. retrive one
-//http://15.206.185.169:3001
-/user/1234
+//http://15.206.185.169:3001/user/1234
 
 userRoutes.route("/user/:id").get(async (req, res) => {
   const id = req.params.id;
@@ -43,8 +41,7 @@ userRoutes.route("/user/:id").get(async (req, res) => {
 });
 
 //3. create
-//http://15.206.185.169:3001
-/user
+//http://15.206.185.169:3001/user
 userRoutes.route("/user").post(async (req, res) => {
   let db = database.getDb();
 

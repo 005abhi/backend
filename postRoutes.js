@@ -9,8 +9,7 @@ let postRoutes = express.Router();
 //crud operations
 
 //1. retrive all
-//http://15.206.185.169:3001
-/post
+//http://15.206.185.169:3001/post
 
 postRoutes.route("/post").get(verifytokens, async (req, res) => {
   let db = database.getDb();
@@ -42,8 +41,7 @@ postRoutes.route("/post/:id").get(async (req, res) => {
 });
 
 //3. create
-//http://15.206.185.169:3001
-/post
+//http://15.206.185.169:3001/post
 postRoutes.route("/post").post(verifytokens, async (req, res) => {
   let db = database.getDb();
   let mongoObject = {
