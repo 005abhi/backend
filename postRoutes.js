@@ -22,8 +22,7 @@ postRoutes.route("/post").get(verifytokens, async (req, res) => {
 });
 
 //2. retrive one
-//http://15.206.185.169:3001
-/post/1234
+//http://15.206.185.169:3001/post/1234
 
 postRoutes.route("/post/:id").get(async (req, res) => {
   if (!objectId.isValid(req.params.id)) {
@@ -57,8 +56,7 @@ postRoutes.route("/post").post(verifytokens, async (req, res) => {
   res.json(data);
 });
 //4. update
-//http://15.206.185.169:3001
-/post/1234
+//http://15.206.185.169:300/post/1234
 postRoutes.route("/post/:id").put(verifytokens, async (req, res) => {
   let db = database.getDb();
   let mongoObject = {
@@ -78,8 +76,7 @@ postRoutes.route("/post/:id").put(verifytokens, async (req, res) => {
 });
 
 //5. delete
-//http://15.206.185.169:3001
-/post/1234
+//http://15.206.185.169:3001/post/1234
 postRoutes.route("/post/:id").delete(verifytokens, async (req, res) => {
   if (!objectId.isValid(req.params.id)) {
     return res.status(400).json({ message: "Invalid ID format" });

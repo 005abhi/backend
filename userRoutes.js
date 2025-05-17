@@ -65,8 +65,7 @@ userRoutes.route("/user").post(async (req, res) => {
 });
 
 //4. update
-//http://15.206.185.169:3001
-/user/1234
+//http://15.206.185.169:3001/user/1234
 userRoutes.route("/user/:id").put(async (req, res) => {
   const id = req.params.id;
   if (!objectId.isValid(id)) {
@@ -89,8 +88,7 @@ userRoutes.route("/user/:id").put(async (req, res) => {
 });
 
 //5. delete
-//http://15.206.185.169:3001
-/user/1234
+//http://15.206.185.169:3001/user/1234
 userRoutes.route("/user/:id").delete(async (req, res) => {
   const id = req.params.id;
   if (!objectId.isValid(id)) {
