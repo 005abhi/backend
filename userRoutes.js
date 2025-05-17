@@ -11,7 +11,8 @@ const SALT_ROUNDS = 10;
 //crud operations
 
 //1. retrive all
-//http://localhost:3001/user
+//http://15.206.185.169:3001
+/user
 
 userRoutes.route("/user").get(async (req, res) => {
   let db = database.getDb();
@@ -24,7 +25,8 @@ userRoutes.route("/user").get(async (req, res) => {
 });
 
 //2. retrive one
-//http://localhost:3001/user/1234
+//http://15.206.185.169:3001
+/user/1234
 
 userRoutes.route("/user/:id").get(async (req, res) => {
   const id = req.params.id;
@@ -41,7 +43,8 @@ userRoutes.route("/user/:id").get(async (req, res) => {
 });
 
 //3. create
-//http://localhost:3001/user
+//http://15.206.185.169:3001
+/user
 userRoutes.route("/user").post(async (req, res) => {
   let db = database.getDb();
 
@@ -65,7 +68,8 @@ userRoutes.route("/user").post(async (req, res) => {
 });
 
 //4. update
-//http://localhost:3001/user/1234
+//http://15.206.185.169:3001
+/user/1234
 userRoutes.route("/user/:id").put(async (req, res) => {
   const id = req.params.id;
   if (!objectId.isValid(id)) {
@@ -88,7 +92,8 @@ userRoutes.route("/user/:id").put(async (req, res) => {
 });
 
 //5. delete
-//http://localhost:3001/user/1234
+//http://15.206.185.169:3001
+/user/1234
 userRoutes.route("/user/:id").delete(async (req, res) => {
   const id = req.params.id;
   if (!objectId.isValid(id)) {
