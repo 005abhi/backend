@@ -1,7 +1,7 @@
+// imageRoutes.js
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const jwt = require("jsonwebtoken");
 require("dotenv").config({ path: "./config.env" });
 
 const multer = require("multer");
@@ -23,10 +23,14 @@ imageRoutes.post("/images", upload.single("file"), (req, res) => {
   if (!req.file) {
     return res.status(400).send("No file uploaded");
   }
-  res.json({ filename: req.file.filename }); // Return filename as ID
+
+  const filename = req.file.filename;
+  const url = `http://15.206.185.169:3001/uploads/${filename}`; // ✅ Use your deployed backend domain/IP
+
+  res.json({ filename, url }); // ✅ Return both for flexibility
 });
 
-// Get image
+// Optional legacy image route
 imageRoutes.get("/images/:id", (req, res) => {
   const imagePath = path.join(__dirname, "public/uploads", req.params.id);
   if (fs.existsSync(imagePath)) {
